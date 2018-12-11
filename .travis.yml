@@ -9,7 +9,7 @@ script:
   - docker run davidnymanibm/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t davidnymanibm/multi-client:latest ./client
+  - docker build -t davidnymanibm/multi-client:latest ./client --pull
   - docker build -t davidnymanibm/multi-nginx ./nginx
   - docker build -t davidnymanibm/multi-server ./server
   - docker build -t davidnymanibm/multi-worker ./worker
